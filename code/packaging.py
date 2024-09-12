@@ -59,8 +59,8 @@ def parse_packaging(packaging_data: str) -> list[dict]:
     if len(unique_items) % 2 == 0: # if even
         new_dict = {unique_items[-1]: int(unique_quantities[-1])}
         list_of_dict.append(new_dict)
-    print(f"ITEMS: {unique_items}")
-    print(f"QUANTITIES: {unique_quantities}")
+    # print(f"ITEMS: {unique_items}")
+    # print(f"QUANTITIES: {unique_quantities}")
     return list_of_dict
 
 
@@ -70,7 +70,7 @@ def parse_packaging(packaging_data: str) -> list[dict]:
 # print(f"\n2: {parse_packaging("6 bars in 1 pack / 12 packs in 1 carton")}")
 # print(f"\n3: {parse_packaging("20 pieces in 1 pack / 10 packs in 1 carton / 4 cartons in 1 box")}")
 # print(f"\n4: {parse_packaging("2 foo in 1 bar / 3 bars in 1 baz / 4 baz in 1 qux / 2 qux in 1 biz ")}")
-print(f"\n5: {parse_packaging("25 balls in 1 bucket / 4 buckets in 1 bin")}")
+# print(f"\n5: {parse_packaging("25 balls in 1 bucket / 4 buckets in 1 bin")}")
 
 order = parse_packaging("25 balls in 1 bucket / 4 buckets in 1 bin")
 
@@ -116,7 +116,7 @@ def get_unit(package: list[dict]) -> str:
 
     '''
     value = list(package[0].keys())[0]
-    print("VALUE", value)
+    # print("VALUE", value)
     return(value)
 
 get_unit(order)

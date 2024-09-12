@@ -25,4 +25,28 @@ Example:
         [{ 'bars' : 6}, {'packs' : 12}, {'carton' : 1}],
     ]    
 '''
+import packaging
+import json
 
+with open('data\packaging.txt', 'r') as file:
+    # Read the entire content of the file
+    content = file.read()
+
+lines = content.splitlines()
+
+
+# Print the content
+parsed_list = []
+for package in lines:
+    package_parsed = packaging.parse_packaging(package)
+    number_of_items = packaging.calc_total_units(package_parsed)
+    item_name = packaging.get_unit(package_parsed)
+    print(package, "=> total units:", number_of_items, item_name)
+    parsed_list.append(package_parsed)
+
+
+print("\n\n", parsed_list)
+
+with open('packaging_export.json', 'w') as file:
+    # Serialize the list to JSON and write it to the file
+    json.dump(parsed_list, file, indent=4)
