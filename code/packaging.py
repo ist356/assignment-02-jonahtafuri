@@ -21,8 +21,8 @@ def parse_packaging(packaging_data: str) -> list[dict]:
 
 
 
-# for index, part in enumerate(input_split):
-# Input from user
+    # for index, part in enumerate(input_split):
+    # Input from user
     unique_items = []
     unique_quantities = []
     count = -1
